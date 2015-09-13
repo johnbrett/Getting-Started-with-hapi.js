@@ -1,1 +1,1 @@
-# Getting-Start-with-Hapi.js
+# Getting Started with hapi.js
