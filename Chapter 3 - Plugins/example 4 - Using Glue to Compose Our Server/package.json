@@ -1,0 +1,17 @@
+{
+  "name": "example-4",
+  "version": "1.0.0",
+  "description": "Sample application using glue to launch",
+  "main": "index.js",
+  "scripts": {
+    "start": "rejoice -c manifest.json -p ."
+  },
+  "author": "John Brett",
+  "license": "ISC",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "glue": "^2.4.0",
+    "hapi": "^11.1.2",
+    "hapi-level": "^4.0.0"
+  }
+}
