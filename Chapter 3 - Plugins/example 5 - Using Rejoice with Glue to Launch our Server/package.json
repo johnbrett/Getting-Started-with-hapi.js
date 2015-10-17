@@ -2,10 +2,16 @@
   "name": "example-5",
   "version": "1.0.0",
   "description": "Sample application using rejoice to launch",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "rejoice -c manifest.json -p ."
+    "start": "rejoice -c index.js -p ."
   },
   "author": "John Brett",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "hapi": "^11.1.2",
+    "hapi-level": "^4.0.0",
+    "rejoice": "^2.2.1"
+  }
 }
