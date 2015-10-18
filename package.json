@@ -1,12 +1,8 @@
 {
-  "name": "chapter1",
+  "name": "Getting Started with hapi.js",
   "version": "1.0.0",
   "description": "",
-  "main": "hapi-hello-world.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\""
-  },
-  "author": "",
+  "author": "John Brett <johnbrett7@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bell": "^6.0.0",
