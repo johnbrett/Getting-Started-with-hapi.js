@@ -1,4 +1,4 @@
-import http from 'http';						// [1]
+const http = require('http');						// [1]
 
 http.createServer((request, response) => {		// [2]
   response.writeHead(200, {'Content-Type': 'text/plain'});	// [3]

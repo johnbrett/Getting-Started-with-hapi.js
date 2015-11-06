@@ -1,0 +1,28 @@
+{
+  "name": "chapter-1",
+  "version": "1.0.0",
+  "description": "Example 1",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnbrett/Getting-Start-with-Hapi.js.git"
+  },
+  "keywords": [
+    "hapi",
+    "learn"
+  ],
+  "bugs": {
+    "url": "https://github.com/johnbrett/Getting-Start-with-Hapi.js/issues"
+  },
+  "homepage": "https://github.com/johnbrett/Getting-Start-with-Hapi.js",
+  "dependencies": {
+    "hapi": "10.x.x",
+    "hoek": "2.x.x"
+  },
+  "scripts": {
+    "lint": "lab -L lib/index.js",
+    "start": "node lib/index.js"
+  },
+  "author": "John Brett",
+  "license": "ISC"
+}
