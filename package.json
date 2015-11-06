@@ -1,0 +1,24 @@
+{
+  "name": "chapter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hapi-hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^3.0.0",
+    "code": "^2.0.1",
+    "glue": "^2.4.0",
+    "good": "^6.4.0",
+    "h2o2": "^4.0.2",
+    "hoek": "^3.0.1",
+    "inert": "^3.2.0",
+    "joi": "^7.0.0",
+    "lab": "^7.2.0",
+    "shot": "^2.0.1",
+    "vision": "^4.0.0"
+  }
+}
