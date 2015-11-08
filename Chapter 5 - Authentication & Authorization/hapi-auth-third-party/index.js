@@ -18,14 +18,16 @@ server.register([
 
     // handle err logic
 
+    // Acquire the clientId and clientSecret by creating a
+    // twitter application at https://apps.twitter.com/app/new
     server.auth.strategy(
         'twitter',
         'bell',
         {
             provider: 'twitter',
             password: 'cookie_encryption_password',
-            clientId: 'artnBIV7G3atQ8vfnQzTLJNU8',
-            clientSecret: '4vi3akf80xc9twXx5STSOUsX46GhYpCRv3hO5N278bBMgjO6Hq',
+            clientId: '',
+            clientSecret: '', 
             isSecure: false
         }
     );
