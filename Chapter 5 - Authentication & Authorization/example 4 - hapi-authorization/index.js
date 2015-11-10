@@ -4,7 +4,7 @@ const Hapi = require('hapi');
 const Basic = require('hapi-auth-basic');
 
 const server = new Hapi.Server();
-server.connection({ port: 1337 });
+server.connection({ host: '127.0.0.1', port: 1337 });
 
 server.register([
     Basic
@@ -36,7 +36,7 @@ server.register([
             path: '/admin',
             config: {
                 auth: {
-                    scope: ['admin']
+                    scope: ['admin', 'something']
                 },
                 handler: function (request, reply) {
 
@@ -56,5 +56,8 @@ server.register([
         }
     ]);
 
-    server.start(() => {});
+    server.start((err) => {
+
+        console.log(`Server running at ${server.info.uri}`);
+    });
 });
