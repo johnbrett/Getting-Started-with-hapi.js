@@ -5,7 +5,7 @@ const Blipp = require('blipp');
 const HapiLevel = require('hapi-level');
 const UserStore = require('./UserStore.js');
 
-const server = new Hapi.Server({ debug: { log: ['*'], request: ['*'] }});
+const server = new Hapi.Server();
 
 server.connection({ port: 1337, host: '127.0.0.1' });
 
