@@ -6,7 +6,7 @@ const Blipp = require('blipp');
 const routes = require('./routes');
 
 const server = new Hapi.Server();
-server.connection({ port: 1337 });
+server.connection({ host: '127.0.0.1', port: 1337 });
 
 server.register([
     Basic,
@@ -29,5 +29,8 @@ server.register([
 
     server.route(routes);
 
-    server.start(() => {});
+    server.start((err) => {
+
+        console.log(`Server running at ${server.info.uri}`);
+    });
 });
