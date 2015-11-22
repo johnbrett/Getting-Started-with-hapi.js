@@ -1,5 +1,5 @@
 {
-  "name": "Getting Started with hapi.js",
+  "name": "Getting-Started-with-hapi.js",
   "version": "1.0.0",
   "description": "",
   "author": "John Brett <johnbrett7@gmail.com>",
@@ -13,6 +13,8 @@
     "h2o2": "^4.0.2",
     "hapi": "^11.1.2",
     "hapi-auth-basic": "^4.1.0",
+    "hapi-auth-cookie": "^3.1.0",
+    "hapi-level": "^4.0.0",
     "hoek": "^3.0.1",
     "inert": "^3.2.0",
     "joi": "^7.0.0",
