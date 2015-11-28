@@ -6,9 +6,9 @@ const Boom = require('boom');
 exports.register = function (server, options, next) {
 
     let store;
-    server.dependency('hapi-level', (server, after) => {
+    server.dependency('hapi-level', (depServer, after) => {
 
-        store = server.plugins['hapi-level'].db.sublevel('user');
+        store = depServer.plugins['hapi-level'].db.sublevel('user');
         return after();
     });
 
@@ -24,10 +24,10 @@ exports.register = function (server, options, next) {
             id: userId,
             details: userDetails
         };
-        
+
         store.put(userId, user, (err) => {
-    
-            getUser(userId, callback)
+
+            getUser(userId, callback);
         });
     };
 
@@ -40,7 +40,8 @@ exports.register = function (server, options, next) {
 
                     const userId = request.params.userId;
                     getUser(userId, (err, user) => {
-                        if(err) {
+
+                        if (err) {
                             return reply(Boom.notFound(err));
                         }
 
@@ -58,8 +59,8 @@ exports.register = function (server, options, next) {
 
                     const userDetails = request.payload;
                     createUser(userDetails, (err, user) => {
-                        
-                        if(err) {
+
+                        if (err) {
                             return reply(Boom.badRequest(err));
                         }
 
