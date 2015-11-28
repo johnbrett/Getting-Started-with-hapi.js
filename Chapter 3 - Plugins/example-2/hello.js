@@ -2,25 +2,25 @@
 
 exports.register = function (server, options, next) {
 
-	let hello = function(_name) {
+    const hello = function (_name) {
 
-		let name = _name || 'World';
-		return `Hello ${name}`;
-	}
+        const name = _name || 'World';
+        return `Hello ${name}`;
+    };
 
-	server.expose({hello: hello});
+    server.expose({ hello: hello });
 
-	server.route({
-		method: 'GET',
-		path: '/hello/{name}',
-		handler: (request, reply) => {
-			
-			let message = hello(request.params.name);
-			return reply(message);
-		}
-	});
+    server.route({
+        method: 'GET',
+        path: '/hello/{name}',
+        handler: (request, reply) => {
 
-  return next();
+            const message = hello(request.params.name);
+            return reply(message);
+        }
+    });
+
+    return next();
 };
 
 exports.register.attributes = {

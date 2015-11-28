@@ -1,20 +1,17 @@
+'use strict';
+
 const Code = require('code');
 const Lab = require('lab');
+const server = require('../lib/index.js');
 
 const lab = exports.lab = Lab.script();
 
-lab.describe('Testing example', () => {
+lab.test('It will return Hello World', (done) => {
 
-    lab.test('fails here', (done) => {
+    server.inject('/', (res) => {
 
-        Code.expect(false).to.be.true();
-        return done();
+        Code.expect(res.statusCode).to.equal(200);
+        Code.expect(res.result).to.equal('Hello World\n');
+        done();
     });
-
-    lab.test('passes here', (done) => {
-
-        Code.expect(true).to.be.true();
-        return done();
-    });
-
 });

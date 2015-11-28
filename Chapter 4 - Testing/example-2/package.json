@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "lab test/index.js"
+    "test": "lab test/index.js -c"
   },
   "author": "",
   "license": "ISC"

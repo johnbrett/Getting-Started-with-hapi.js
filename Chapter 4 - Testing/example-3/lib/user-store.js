@@ -3,12 +3,16 @@
 const Uuid = require('uuid');
 const Boom = require('boom');
 
-const getUser = (userId, callback) => {
+const internals = {
+    store: null
+};
+
+internals.getUser = (userId, callback) => {
 
     return internals.store.get(userId, callback);
 };
 
-const createUser = (userDetails, callback) => {
+internals.createUser = (userDetails, callback) => {
 
     const userId = Uuid.v4();
     const user = {
@@ -22,11 +26,6 @@ const createUser = (userDetails, callback) => {
     });
 };
 
-const internals = {
-    store: null,
-    getUser: getUser,
-    createUser: createUser
-};
 exports._internals = internals;
 
 exports.register = function (server, options, next) {

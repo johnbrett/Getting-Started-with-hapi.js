@@ -1,19 +1,15 @@
 'use strict';
-let Hapi = require('hapi');
 
-let server = new Hapi.Server();
+const Hapi = require('hapi');
 
-server.connection({ port: 1337, host: '127.0.0.1' });
+const server = new Hapi.Server();
 
-server.method('getHello', function(name) {
+// Create server method
+server.method('getHello', (name) => {
 
-	return `hello ${name}`;
-}, { callback: false});
+    return `hello ${name}`;
+}, { callback: false });
 
-let message = server.methods.getHello('world');
-console.log(message)
-
-server.start((err) => {
-
-	console.log(`Server running at ${server.info.uri}`);
-});
+// Call server method
+const message = server.methods.getHello('world');
+console.log(message);

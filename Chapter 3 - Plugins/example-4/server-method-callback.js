@@ -4,19 +4,14 @@ const Hapi = require('hapi');
 
 const server = new Hapi.Server();
 
-server.connection({ port: 1337, host: '127.0.0.1' });
+// Create a server method
+server.method('getHello', (name, next) => {
 
-server.method('getHello', function (name, next) {
-
-	return next(`hello ${name}`);
+    return next(`hello ${name}`);
 });
 
-server.methods.getHello('world', function (res) => {
+// Call server method
+server.methods.getHello('world', (res) => {
 
-	console.log(res)
-});
-
-server.start((err) => {
-
-	console.log(`Server running at ${server.info.uri}`);
+    console.log(res);
 });
