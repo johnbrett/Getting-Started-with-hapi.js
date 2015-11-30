@@ -2,12 +2,15 @@
 
 const Hapi = require('hapi');
 const Basic = require('hapi-auth-basic');
+const Blipp = require('blipp');
+const routes = require('./routes');
 
 const server = new Hapi.Server();
 server.connection({ port: 1337 });
 
 server.register([
-    Basic
+    Basic,
+    { register: Blipp, options: { showAuth: true } }
 ], (ignore) => {
 
     const basicConfig = {
@@ -21,31 +24,13 @@ server.register([
         }
     };
 
-    server.auth.strategy('simple', 'basic', 'required', basicConfig);
+    server.auth.strategy('simple', 'basic', basicConfig);
+    server.auth.default('simple');
 
-    server.route([
-        {
-            method: 'GET',
-            path: '/public',
-            config: {
-                auth: false,
-                handler: function (request, reply) {
+    server.route(routes);
 
-                    return reply(request.auth);
-                }
-            }
-        },
-        {
-            method: 'GET',
-            path: '/private',
-            config: {
-                handler: function (request, reply) {
+    server.start((err) => {
 
-                    return reply(request.auth);
-                }
-            }
-        }
-    ]);
-
-    server.start((err) => console.log(`Server running at: ${server.info.uri}`));
+        console.log(`Server running at: ${server.info.uri}`);
+    });	
 });
