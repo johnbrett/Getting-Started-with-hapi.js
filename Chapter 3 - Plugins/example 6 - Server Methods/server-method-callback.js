@@ -15,3 +15,15 @@ server.methods.getHello('world', (res) => {
 
     console.log(res);
 });
+
+
+// Server method with a bound context
+server.method('boundGetHello', function (next) {
+
+    return next(`bound ${this.user}`);
+}, { bind: { user: 'john' } });
+
+server.methods.boundGetHello((res) => {
+
+    console.log(res);
+});
