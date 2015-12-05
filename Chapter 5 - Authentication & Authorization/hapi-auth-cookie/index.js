@@ -1,34 +1,35 @@
 'use strict';
-
 const Hapi = require('hapi');
 const Cookie = require('hapi-auth-cookie');
 const Blipp = require('blipp');
 const routes = require('./routes');
 
 const server = new Hapi.Server();
-server.connection({ host: '127.0.0.1', port: 1337 });
+server.connection({ port: 1337 });
 
 server.register([
     Cookie,
     { register: Blipp, options: { showAuth: true } }
-], (err) => {
-
-    // handle err logic
+], (ignore) => {
 
     server.auth.strategy(
         'session',
         'cookie',
         {
             cookie: 'example',
-            password: 'password',
+            password: 'secret',
             isSecure: false,
             redirectTo: '/login',
-            redirectOnTry: false
+            redirectOnTry: false,
+            appendNext: 'redirect'
         }
     );
     server.auth.default('session');
 
     server.route(routes);
 
-    server.start(() => {});
+    server.start((err) => {
+
+        console.log(`Server running at: ${server.info.uri}`);
+    });
 });

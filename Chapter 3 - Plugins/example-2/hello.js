@@ -13,7 +13,7 @@ exports.register = function (server, options, next) {
     server.route({
         method: 'GET',
         path: '/hello/{name}',
-        handler: function (request, reply) {
+        handler: (request, reply) => {
 
             const message = hello(request.params.name);
             return reply(message);

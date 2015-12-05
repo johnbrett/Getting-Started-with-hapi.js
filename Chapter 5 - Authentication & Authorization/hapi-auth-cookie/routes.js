@@ -1,18 +1,37 @@
 'use strict';
 
+const Boom = require('boom');
+
 module.exports = [
     {
         method: 'GET',
-        path: '/login',
+        path: '/public',
         config: {
             auth: {
                 mode: 'try'
             },
             handler: function (request, reply) {
 
-                if (request.auth.isAuthenticated === true) {
-                    return reply.redirect('/private');
-                }
+                return reply(request.auth);
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/private',
+        config: {
+            handler: function (request, reply) {
+
+                return reply(request.auth);
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/login',
+        config: {
+            auth: false,
+            handler: function (request, reply) {
 
                 let loginForm = `
                     <form method="post" action="/login">
@@ -42,45 +61,11 @@ module.exports = [
             handler: function (request, reply) {
 
                 if (request.payload.username !== 'admin' || request.payload.password !== 'password') {
-                    request.auth.session.clear();
                     return reply.redirect('/login?login=failed');
                 }
 
-                request.auth.session.set({ username: request.payload.username, lastLogin: new Date() });
+                request.auth.session.set({ username: request.payload.username });
                 return reply.redirect('/private');
-            }
-        }
-    },
-    {
-        method: 'GET',
-        path: '/public',
-        config: {
-            auth: {
-                mode: 'try'
-            },
-            handler: function (request, reply) {
-
-                return reply(request.auth);
-            }
-        }
-    },
-    {
-        method: 'GET',
-        path: '/private',
-        config: {
-            handler: function (request, reply) {
-
-                return reply(request.auth);
-            }
-        }
-    },
-    {
-        method: 'GET',
-        path: '/private1234',
-        config: {
-            handler: function (request, reply) {
-
-                return reply(request.auth);
             }
         }
     }
