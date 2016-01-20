@@ -1,13 +1,15 @@
 'use strict';
 
 const Hapi = require('hapi');
+const Blipp = require('blipp');
 const Basic = require('hapi-auth-basic');
 
 const server = new Hapi.Server();
 server.connection({ host: '127.0.0.1', port: 1337 });
 
 server.register([
-    Basic
+    Basic,
+    Blipp
 ], (err) => {
 
     // handle err logic

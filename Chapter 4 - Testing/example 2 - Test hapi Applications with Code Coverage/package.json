@@ -1,0 +1,12 @@
+{
+  "name": "example-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/start.js",
+  "scripts": {
+    "start": "node lib/start",
+    "test": "lab test/index.js -c"
+  },
+  "author": "",
+  "license": "ISC"
+}

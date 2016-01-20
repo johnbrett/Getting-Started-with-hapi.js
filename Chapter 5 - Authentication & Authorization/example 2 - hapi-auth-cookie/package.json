@@ -1,0 +1,15 @@
+{
+  "name": "example-2",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js"
+  },
+  "author": "John Brett",
+  "license": "ISC",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "hapi": "^11.1.2",
+    "hapi-auth-cookie": "^3.1.0"
+  }
+}

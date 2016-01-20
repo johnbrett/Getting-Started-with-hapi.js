@@ -1,0 +1,11 @@
+{
+  "name": "example-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test/index.js",
+  "scripts": {
+    "test": "lab test/index.js"
+  },
+  "author": "John Brett",
+  "license": "ISC"
+}
