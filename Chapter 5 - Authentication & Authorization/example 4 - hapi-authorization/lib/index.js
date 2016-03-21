@@ -38,7 +38,9 @@ server.register([
             path: '/admin',
             config: {
                 auth: {
-                    scope: ['admin', 'something']
+                    access: {
+                        scope: ['admin', 'something']
+                    }
                 },
                 handler: function (request, reply) {
 
