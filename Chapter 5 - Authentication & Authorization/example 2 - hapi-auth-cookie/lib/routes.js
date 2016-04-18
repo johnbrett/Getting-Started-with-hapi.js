@@ -42,7 +42,6 @@ module.exports = [
             handler: function (request, reply) {
 
                 if (request.payload.username !== 'admin' || request.payload.password !== 'password') {
-                    request.auth.session.clear();
                     return reply.redirect('/login?login=failed');
                 }
 
