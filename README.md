@@ -4,7 +4,7 @@
   <img src="https://gettingstartedwithhapijs.com/img/book_cover.jpg" align="right" width="200px"/>
 </a>
 <br>
-This repo contains all the code examples for the book [Getting Started with hapi.js](https://gettingstartedwithhapijs.com) by [John Brett](https://github.com/johnbrett). 
+This repo contains all the code examples for the book [Getting Started with hapi.js](http://bit.ly/1SiX2iF) by [John Brett](https://github.com/johnbrett). 
 
 Regardless of whether you've read the book or not, I'd like this repo to be a location for useful examples, explanations and discussions for anything hapi related.
 
