@@ -1,0 +1,9 @@
+{
+  "name": "getting-started-with-hapi-website",
+  "main": "./server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "John Brett",
+  "license": "ISC"
+}
