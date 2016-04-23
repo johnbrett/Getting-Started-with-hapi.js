@@ -1,9 +1,15 @@
 {
-  "name": "getting-started-with-hapi-website",
+  "name": "getting-started-with-hapi-example-website",
   "main": "./server.js",
   "scripts": {
     "start": "node server.js"
   },
   "author": "John Brett",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^13.3.0",
+    "inert": "^3.2.0",
+    "vision": "^4.1.0"
+  }
 }

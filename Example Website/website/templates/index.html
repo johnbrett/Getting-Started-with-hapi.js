@@ -1,134 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:description" name="description" content="Getting Started with hapi.js, a book to teach you how to build well-structured, testable applications and APIs using hapi.js" />
+        <meta name="author" content="John Brett" />
+        <meta name="google-site-verification" content="tZUTdGDGmLYqzK4umimVMVJGTfylZqC-CPvP2of9LTU" />
+        <link rel="icon" type="image/png" href="img/favicon.png" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:description" name="description" content="Getting Started with hapi.js, a book to teach you how to build well-structured, testable applications and APIs using hapi.js" />
-    <meta name="author" content="John Brett" />
-    <meta name="google-site-verification" content="tZUTdGDGmLYqzK4umimVMVJGTfylZqC-CPvP2of9LTU" />
-    
-    <meta property="og:title" content="Getting Started with hapi.js" />
-    <meta property="og:image" content="https://gettingstartedwithhapijs.com/img/book_cover.jpg" />
-    <meta property="og:url" content="https://gettingstartedwithhapijs.com" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@johnbrett_" />
-    <meta name="twitter:title" content="Getting Started with hapi.js" />
-    <meta name="twitter:description" content="Getting Started with hapi.js, a book to teach you how to build well-structured, testable applications and APIs using hapi.js" />
-    <meta name="twitter:image" content="https://gettingstartedwithhapijs.com/img/book_cover.jpg" />
+        <title>Learn hapi.js | Getting Started with hapi.js</title>
+        
+        <!-- Facebook Open Graph Structured Data, for appearance when shared on Facebook -->
+        <meta property="og:title" content="Getting Started with hapi.js" />
+        <meta property="og:image" content="https://gettingstartedwithhapijs.com/img/book_cover.jpg" />
+        <meta property="og:url" content="https://gettingstartedwithhapijs.com" />
+        
+        <!-- Twitter Card Structured Data, for appearance when shared on Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@johnbrett_" />
+        <meta name="twitter:title" content="Getting Started with hapi.js" />
+        <meta name="twitter:description" content="Getting Started with hapi.js, a book to teach you how to build well-structured, testable applications and APIs using hapi.js" />
+        <meta name="twitter:image" content="https://gettingstartedwithhapijs.com/img/book_cover.jpg" />
 
-    <title>Learn hapi.js | Getting Started with hapi.js</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link href="css/agency.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet" />
+        <!-- Custom Fonts -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+        <link href="//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        
+        <!-- Google search structured data for search results appearance -->
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Product",
+            "name": "Getting Started with hapi.js",
+            "image": "https://gettingstartedwithhapijs.com/img/book_cover.jpg",
+            "description": "This book will introduce hapi.js and walk you through the creation of your first working application using the out-of-the-box features hapi.js provides. Packed with real-world problems and examples, this book introduces some of the basic concepts of hapi.js and Node.js and takes you through the typical journey you'll face when developing an application. Starting with easier concepts such as routing requests, building APIs serving JSON, using templates to build websites and applications, and connecting databases, we then move on to more complex problems such as authentication, model validation, caching, and techniques for structuring your codebase to scale gracefully. You will also develop skills to ensure your application's reliability through testing, code coverage, and logging."
+        }
+        </script>
+    </head>
 
-    <!-- Custom Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+    <body id="page-top" class="index">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-    
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "Product",
-        "name": "Getting Started with hapi.js",
-        "image": "https://gettingstartedwithhapijs.com/img/book_cover.jpg",
-        "description": "This book will introduce hapi.js and walk you through the creation of your first working application using the out-of-the-box features hapi.js provides. Packed with real-world problems and examples, this book introduces some of the basic concepts of hapi.js and Node.js and takes you through the typical journey you'll face when developing an application. Starting with easier concepts such as routing requests, building APIs serving JSON, using templates to build websites and applications, and connecting databases, we then move on to more complex problems such as authentication, model validation, caching, and techniques for structuring your codebase to scale gracefully. You will also develop skills to ensure your application's reliability through testing, code coverage, and logging."
-    }
-    </script>
-    
-</head>
-
-<body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
-        <div class="container">
-            
-            <!-- Links that display only for mobile -->
-            <div class="col-xs-4 mobile">
-                <a class="page-scroll" href="/summary">Summary</a>
-            </div>
-            <div class="col-xs-4 mobile">
-                <a class="page-scroll" href="/chapters">Chapters</a>
-            </div>
-            <div class="col-xs-4 mobile">
-                <a class="page-scroll" href="/author">Author</a>
-            </div>
-
-            <!-- Links that display only for desktop -->
-            <div class="desktop" id="">
-                <a class="navbar-brand page-scroll title" href="#page-top">Getting Started with hapi.js</a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden active">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="">
-                        <a class="page-scroll" href="/summary">Summary</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/chapters">Chapters</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/author">Author</a>
-                    </li>
-                </ul>
-            </div>
-  
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    
-    {{{ content }}}
-    
-    <footer class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="copyright">Copyright © 2015 John Brett, Packt Publishing. All trademarks and registered trademarks are the property of their respective owners</span>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+            <div class="container">
+                
+                <!-- Links that display only for mobile -->
+                <div class="col-xs-4 mobile">
+                    <a class="page-scroll" href="/summary">Summary</a>
                 </div>
-                <div class="col-md-12">
-                    <span class="copyright">Big thanks to <a href="http://www.mariocasciaro.me/">Mario Casciaro</a> and the Agency theme from Start Bootstrap for the inspiration for this website.</span>
+                <div class="col-xs-4 mobile">
+                    <a class="page-scroll" href="/chapters">Chapters</a>
+                </div>
+                <div class="col-xs-4 mobile">
+                    <a class="page-scroll" href="/author">Author</a>
+                </div>
+
+                <!-- Links that display only for desktop -->
+                <div class="desktop" id="">
+                    <a class="navbar-brand page-scroll title" href="#page-top">Getting Started with hapi.js</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden active">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="">
+                            <a class="page-scroll" href="/summary">Summary</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="/chapters">Chapters</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="/author">Author</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        
+        {{{ content }}}
+        
+        <!-- Website Footer -->
+        <footer class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="copyright">Copyright © 2015 John Brett, Packt Publishing. All trademarks and registered trademarks are the property of their respective owners</span>
+                    </div>
+                    <div class="col-md-12">
+                        <span class="copyright">Big thanks to <a href="http://www.mariocasciaro.me/">Mario Casciaro</a> and the Agency theme from Start Bootstrap for the inspiration for this website.</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script>
-        $(function() {
-            $('a.page-scroll').bind('click', function(event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 1500, 'easeInOutExpo');
-                event.preventDefault();
-            });
-        });
-    </script>
-</body>
-
+        <!-- Plugin JavaScript -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    </body>
 </html>
