@@ -1,5 +1,5 @@
 {
-  "name": "example-2",
+  "name": "example-3",
   "version": "1.0.0",
   "description": "",
   "main": "lib/start.js",
@@ -10,6 +10,7 @@
   "author": "John Brett johnbrett7@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "blipp": "^2.3.0",
     "boom": "^3.0.0",
     "code": "^2.0.1",
     "hapi-level": "^4.0.0",
@@ -17,6 +18,7 @@
     "joi": "^7.0.0",
     "lab": "^7.2.0",
     "rimraf": "^2.4.3",
-    "shot": "^2.0.1"
+    "shot": "^2.0.1",
+    "uuid": "^2.0.2"
   }
 }
