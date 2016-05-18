@@ -45,7 +45,7 @@ module.exports = [
                     return reply.redirect('/login?login=failed');
                 }
 
-                request.auth.session.set({ username: request.payload.username, lastLogin: new Date() });
+                request.cookieAuth.set({ username: request.payload.username, lastLogin: new Date() });
                 return reply.redirect('/private');
             }
         }
