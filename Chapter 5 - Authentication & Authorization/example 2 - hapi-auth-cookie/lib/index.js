@@ -20,7 +20,7 @@ server.register([
         'cookie',
         {
             cookie: 'example',
-            password: 'password',
+            password: 'password-must-be-at-least-32-characters',
             isSecure: false,
             redirectTo: '/login',
             redirectOnTry: false
