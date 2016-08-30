@@ -13,7 +13,7 @@ module.exports = [
                     return reply('Login failed...');
                 }
 
-                request.auth.session.set({
+                request.cookieAuth.set({
                     username: request.auth.credentials.profile.username
                 });
                 return reply.redirect('/private');

@@ -1,8 +1,10 @@
-# Handlebars Example
+# Example Website Built in hapi using Handlebars
 
-This mini-site is an example of how to use handlebars with hapi.
+This is a sample website built in hapi using the handlebars templating language. 
 
-In this example we're just serving templates rendered handlebars, with little to no JS which is a very simple use case.
+It is a similar to the main Getting Started with hapi.js website, except modified to be a multi-page site using the handlebars templating language to render each page instead of using the single page site structure you would see see on the main site. 
+
+You can see the demo site in action here: https://getting-started-with-hapi-website-yuayhwvtkl.now.sh/, with thanks to [Zeit.co](zeit.co) for free open source hosting.
 
 Hopefully this example illustrates how you could build an app, where in most apps you would populate the 
 `context` variable passed to the templates with data from a database.
