@@ -11,7 +11,7 @@
     "glue": "^2.4.0",
     "good": "^6.4.0",
     "h2o2": "^4.0.2",
-    "hapi": "^11.1.2",
+    "hapi": "^17.0.0",
     "hapi-auth-basic": "^4.1.0",
     "hapi-auth-cookie": "^3.1.0",
     "hapi-level": "^4.0.0",
@@ -24,7 +24,8 @@
     "rejoice": "^2.2.1",
     "reptile": "^2.0.0",
     "shot": "^2.0.1",
-    "vision": "^4.0.0"
+    "vision": "^4.0.0",
+    "blipp": "3.0.0"
   },
   "devDependencies": {
     "eslint": "1.x.x",
