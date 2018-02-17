@@ -5,7 +5,7 @@
   "author": "John Brett <johnbrett7@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "bell": "^6.0.0",
+    "bell": "^7.7.0",
     "boom": "^3.0.0",
     "code": "^2.0.1",
     "glue": "^2.4.0",
@@ -21,7 +21,7 @@
     "lab": "^7.2.0",
     "mongodb": "^2.0.51",
     "poop": "^2.0.0",
-    "rejoice": "^2.2.1",
+    "rejoice": "^3.2.0",
     "reptile": "^2.0.0",
     "shot": "^2.0.1",
     "vision": "^4.0.0"
